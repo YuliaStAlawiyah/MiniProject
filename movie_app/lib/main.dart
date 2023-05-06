@@ -5,7 +5,8 @@ import 'package:movie_app/constants.dart';
 import 'package:movie_app/models/api/movie_api.dart';
 import 'package:movie_app/models/api/movie_api_impl.dart';
 import 'package:movie_app/providers/movie_discover_provider.dart';
-import 'package:movie_app/screens/movie_page_screen.dart';
+import 'package:movie_app/providers/movie_top_rated_provider.dart';
+import 'package:movie_app/screens/login_page_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -15,11 +16,11 @@ void main() {
 
   final dioOptions = BaseOptions(
     baseUrl: Constants.baseUrl,
-    queryParameters: {'api_key' : Constants.apiKey},
+    queryParameters: {'api_key': Constants.apiKey},
   );
   final Dio dio = Dio(dioOptions);
   final MovieRepository movieRepository = MovieImplRepository(dio);
-  
+
   runApp(MyApp(movieRepository: movieRepository));
   FlutterNativeSplash.remove();
 }
@@ -32,20 +33,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers : [
+      providers: [
         ChangeNotifierProvider(
           create: (_) => MovieDiscoverProvider(movieRepository),
         ),
+        ChangeNotifierProvider(
+          create: (_) => MovieTopRatedProvider(movieRepository),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Movie',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.blueGrey,
         ),
-        home: const MoviePageScreen()
+        home: const LoginPageScreen(),
       ),
     );
   }
 }
-

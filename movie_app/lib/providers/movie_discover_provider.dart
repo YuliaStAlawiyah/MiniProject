@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/models/api/movie_api.dart';
 import 'package:movie_app/models/movie_model.dart';
 
-class MovieDiscoverProvider with ChangeNotifier{
+class MovieDiscoverProvider extends ChangeNotifier {
   final MovieRepository _movieRepository;
 
   MovieDiscoverProvider(this._movieRepository);
@@ -19,26 +19,23 @@ class MovieDiscoverProvider with ChangeNotifier{
 
     final result = await _movieRepository.getDiscover();
 
-    result.fold(
-      (errorMassage) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text(errorMassage),
-        ));
+    result.fold((errorMassage) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(errorMassage),
+      ));
 
-        _isLoding = false;
-        notifyListeners();
+      _isLoding = false;
+      notifyListeners();
 
-        return ;
-      }, 
-      (response) {
-        _movies.clear();
+      return;
+    }, (response) {
+      _movies.clear();
 
-        _movies.addAll(response.results);
+      _movies.addAll(response.results);
 
-        _isLoding = false;
-        notifyListeners();
-        return null;
-      }
-    );
+      _isLoding = false;
+      notifyListeners();
+      return null;
+    });
   }
 }
