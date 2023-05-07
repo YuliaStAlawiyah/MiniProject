@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/akun_page_screen.dart';
-import 'beranda_page_screen.dart';
+import 'home_page_screen.dart';
 
 class MoviePageScreen extends StatefulWidget {
   const MoviePageScreen({super.key});

@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => MovieTopRatedProvider(movieRepository),
-        )
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

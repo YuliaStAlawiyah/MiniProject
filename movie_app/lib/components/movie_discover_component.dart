@@ -5,15 +5,14 @@ import 'package:movie_app/providers/movie_discover_provider.dart';
 import 'package:movie_app/widgets/image_widget.dart';
 import 'package:provider/provider.dart';
 
-class MovieDiscaverComponenet extends StatefulWidget {
-  const MovieDiscaverComponenet({super.key});
+class MovieDiscaverComponent extends StatefulWidget {
+  const MovieDiscaverComponent({super.key});
 
   @override
-  State<MovieDiscaverComponenet> createState() =>
-      _MovieDiscaverComponenetState();
+  State<MovieDiscaverComponent> createState() => _MovieDiscaverComponentState();
 }
 
-class _MovieDiscaverComponenetState extends State<MovieDiscaverComponenet> {
+class _MovieDiscaverComponentState extends State<MovieDiscaverComponent> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {

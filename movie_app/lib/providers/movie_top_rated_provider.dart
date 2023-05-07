@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/models/api/movie_api.dart';
 import 'package:movie_app/models/movie_model.dart';
 
-class MovieTopRatedProvider extends ChangeNotifier {
+class MovieTopRatedProvider with ChangeNotifier {
   final MovieRepository _movieRepository;
 
   MovieTopRatedProvider(this._movieRepository);

@@ -39,7 +39,7 @@ class _BerandaPageScreenState extends State<BerandaPageScreen> {
             foregroundColor: Colors.greenAccent,
           ),
           const _WidgetTitle(title: 'Discaver Movies'),
-          const MovieDiscaverComponenet(),
+          const MovieDiscaverComponent(),
           const _WidgetTitle(title: 'Top Rated Movies'),
           const MovieTopRatedComponent(),
         ],

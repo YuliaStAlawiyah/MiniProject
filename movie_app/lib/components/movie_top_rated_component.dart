@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/providers/movie_discover_provider.dart';
 import 'package:movie_app/providers/movie_top_rated_provider.dart';
 import 'package:movie_app/widgets/image_widget.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +13,7 @@ class MovieTopRatedComponent extends StatefulWidget {
 class _MovieTopRatedComponentState extends State<MovieTopRatedComponent> {
   @override
   void initState() {
-    WidgetsBinding.instance.addPersistentFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<MovieTopRatedProvider>().getTopRated(context);
     });
     super.initState();
@@ -25,44 +24,43 @@ class _MovieTopRatedComponentState extends State<MovieTopRatedComponent> {
     return SliverToBoxAdapter(
       child: SizedBox(
         height: 200,
-        child: Consumer<MovieDiscoverProvider>(
+        child: Consumer<MovieTopRatedProvider>(
           builder: (_, provider, __) {
-            if (provider.isLoding) {
+            if (provider.isLoading) {
               return Container(
-                margin: const EdgeInsets.symmetric(horizontal: 16),
+                margin: const EdgeInsets.symmetric(horizontal: 16.0),
                 decoration: BoxDecoration(
-                  color: Colors.black12,
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                    color: Colors.black26,
+                    borderRadius: BorderRadius.circular(12.0)),
               );
             }
+
             if (provider.movies.isNotEmpty) {
               return ListView.separated(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
                   return ImageWidget(
                     imageSrc: provider.movies[index].posterPath,
                     height: 200,
                     width: 120,
-                    radius: 12,
                   );
                 },
                 separatorBuilder: (_, __) => const SizedBox(
-                  width: 10,
+                  width: 8.0,
                 ),
                 itemCount: provider.movies.length,
               );
             }
 
             return Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 16.0),
               decoration: BoxDecoration(
-                color: Colors.black12,
-                borderRadius: BorderRadius.circular(12),
+                color: Colors.black26,
+                borderRadius: BorderRadius.circular(12.0),
               ),
               child: const Center(
-                child: Text('Not found top roted movies'),
+                child: Text('Not found top rated movies'),
               ),
             );
           },
@@ -70,8 +68,4 @@ class _MovieTopRatedComponentState extends State<MovieTopRatedComponent> {
       ),
     );
   }
-}
-
-class MoviePopularProvider {
-  void getTopRated(BuildContext context) {}
 }

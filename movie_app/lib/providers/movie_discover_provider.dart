@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/models/api/movie_api.dart';
 import 'package:movie_app/models/movie_model.dart';
 
-class MovieDiscoverProvider extends ChangeNotifier {
+class MovieDiscoverProvider with ChangeNotifier {
   final MovieRepository _movieRepository;
 
   MovieDiscoverProvider(this._movieRepository);

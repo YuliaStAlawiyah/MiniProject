@@ -49,6 +49,16 @@ class _LoginScreenState extends State<LoginPageScreen> {
   }
 
   Widget build(BuildContext context) {
+    void showSnackbar(BuildContext context) {
+      final snackBar = SnackBar(
+        content: const Text(
+          'Login Successfully',
+          style: TextStyle(color: Colors.white, fontSize: 15),
+        ),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -126,6 +136,7 @@ class _LoginScreenState extends State<LoginPageScreen> {
               ),
               ElevatedButton(
                 onPressed: () {
+                  showSnackbar(context);
                   final isValidForm = formKey.currentState!.validate();
                   String username = _nameController.text;
                   if (isValidForm) {

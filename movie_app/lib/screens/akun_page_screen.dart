@@ -29,12 +29,22 @@ class _AkunPageScreenState extends State<AkunPageScreen> {
 
   @override
   Widget build(BuildContext context) {
+    void showSnackbar(BuildContext context) {
+      final snackBar = SnackBar(
+          content: const Text(
+        'Logout Successfully',
+        style: TextStyle(color: Colors.white, fontSize: 15),
+      ));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Account Page'),
         actions: [
           IconButton(
             onPressed: () {
+              showSnackbar(context);
               logindata.setBool('login', true);
               logindata.remove('username');
               Navigator.pushReplacement(
