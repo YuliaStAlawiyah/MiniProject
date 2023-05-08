@@ -4,18 +4,22 @@ import 'package:movie_app/models/movie_model.dart';
 import 'package:movie_app/widgets/image_widget.dart';
 
 class ItemMovie extends Container {
-  final MovieModel movie;
-  final double radius;
+  final MovieModel? movie;
   final MovieDetailModel? movieDetail;
   final double heightPoster;
   final double widthPoster;
+  final double heightBackdrop;
+  final double widthBackdrop;
+  final double radius;
   final void Function()? onTap;
 
   ItemMovie({
     required this.heightPoster,
     required this.widthPoster,
-    required this.movie,
+    required this.heightBackdrop,
+    required this.widthBackdrop,
     this.movieDetail,
+    this.movie,
     this.onTap,
     this.radius = 12,
     super.key,
@@ -26,20 +30,21 @@ class ItemMovie extends Container {
 
   @override
   Decoration? get decoration => BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(radius),
       );
 
   @override
   Widget? get child => Stack(
         children: [
           ImageWidget(
-            imageSrc: movie.backdropPath,
-            height: 300,
-            width: double.infinity,
+            imageSrc:
+                '${movieDetail != null ? movieDetail!.backdropPath : movie!.backdropPath}',
+            height: heightBackdrop,
+            width: widthBackdrop,
           ),
           Container(
-            height: 300,
-            width: double.infinity,
+            height: heightBackdrop,
+            width: widthBackdrop,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
@@ -56,14 +61,15 @@ class ItemMovie extends Container {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ImageWidget(
-                  imageSrc: movie.posterPath,
-                  height: 160,
-                  width: 100,
+                  imageSrc:
+                      '${movieDetail != null ? movieDetail!.posterPath : movie!.posterPath}',
+                  height: heightPoster,
+                  width: widthPoster,
                   radius: 12,
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  movie.title,
+                  '${movieDetail != null ? movieDetail!.title : movie!.title}',
                   style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -77,7 +83,7 @@ class ItemMovie extends Container {
                       color: Colors.amber,
                     ),
                     Text(
-                      '${movie.voteAverage} (${movie.voteCount})',
+                      '${movieDetail != null ? movieDetail!.voteAverage : movie!.voteAverage} (${movieDetail != null ? movieDetail!.voteCount : movie!.voteCount})',
                       style: const TextStyle(
                           fontSize: 16,
                           color: Colors.white,

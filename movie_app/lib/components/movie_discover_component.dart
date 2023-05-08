@@ -1,9 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/constants.dart';
 import 'package:movie_app/providers/movie_discover_provider.dart';
 import 'package:movie_app/screens/movie_detail_page_screen.dart';
-import 'package:movie_app/widgets/image_widget.dart';
 import 'package:movie_app/widgets/item_movie_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -33,9 +31,13 @@ class _MovieDiscaverComponentState extends State<MovieDiscaverComponent> {
               margin: const EdgeInsets.symmetric(horizontal: 16),
               height: 300,
               width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                borderRadius: BorderRadius.circular(10),
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Colors.transparent, Colors.black12]),
+                // color: Colors.black12,
+                // borderRadius: BorderRadius.circular(10),
               ),
             );
           }
@@ -46,6 +48,8 @@ class _MovieDiscaverComponentState extends State<MovieDiscaverComponent> {
                 final movie = provider.movies[index];
                 return ItemMovie(
                   movie: movie,
+                  heightBackdrop: 300,
+                  widthBackdrop: double.infinity,
                   heightPoster: 160,
                   widthPoster: 100,
                   onTap: () {

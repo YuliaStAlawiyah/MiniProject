@@ -44,6 +44,7 @@ class _MovieTopRatedComponentState extends State<MovieTopRatedComponent> {
                     imageSrc: provider.movies[index].posterPath,
                     height: 200,
                     width: 120,
+                    radius: 12,
                   );
                 },
                 separatorBuilder: (_, __) => const SizedBox(
