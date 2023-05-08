@@ -7,12 +7,14 @@ class ImageWidget extends StatelessWidget {
     this.imageSrc,
     required this.height,
     required this.width,
+    this.onTap,
     this.radius = 0,
   });
 
   final String? imageSrc;
   final double height;
   final double width;
+  final void Function()? onTap;
   final double radius;
 
   @override
@@ -28,9 +30,7 @@ class ImageWidget extends StatelessWidget {
           return SizedBox(
             height: height,
             width: width,
-            child: const Icon(
-              Icons.broken_image_rounded,
-            ),
+            child: const Icon(Icons.broken_image_rounded),
           );
         },
       ),

@@ -34,6 +34,8 @@ class _BerandaPageScreenState extends State<BerandaPageScreen> {
                 const Text('Movie App'),
               ],
             ),
+            floating: true,
+            snap: true,
             centerTitle: true,
             backgroundColor: Colors.blueGrey,
             foregroundColor: Colors.greenAccent,

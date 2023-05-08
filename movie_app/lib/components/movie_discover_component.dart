@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/models/movie_model.dart';
+import 'package:movie_app/constants.dart';
 import 'package:movie_app/providers/movie_discover_provider.dart';
+import 'package:movie_app/screens/movie_detail_page_screen.dart';
 import 'package:movie_app/widgets/image_widget.dart';
+import 'package:movie_app/widgets/item_movie_widget.dart';
 import 'package:provider/provider.dart';
 
 class MovieDiscaverComponent extends StatefulWidget {
@@ -42,7 +44,21 @@ class _MovieDiscaverComponentState extends State<MovieDiscaverComponent> {
               itemCount: provider.movies.length,
               itemBuilder: (_, index, __) {
                 final movie = provider.movies[index];
-                return ItemMovie(movie);
+                return ItemMovie(
+                  movie: movie,
+                  heightPoster: 160,
+                  widthPoster: 100,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return MovieDetailPageScreen(id: movie.id);
+                        },
+                      ),
+                    );
+                  },
+                );
               },
               options: CarouselOptions(
                 height: 300,
@@ -74,88 +90,4 @@ class _MovieDiscaverComponentState extends State<MovieDiscaverComponent> {
       ),
     );
   }
-}
-
-class ItemMovie extends Container {
-  final MovieModel movie;
-
-  ItemMovie(this.movie, {super.key});
-
-  @override
-  Clip get clipBehavior => Clip.hardEdge;
-
-  @override
-  Decoration? get decoration => BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-      );
-
-  @override
-  Widget? get child => Stack(
-        children: [
-          ImageWidget(
-            imageSrc: '${movie.backdropPath}',
-            height: 300,
-            width: double.infinity,
-          ),
-          Container(
-            height: 300,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.center,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.transparent,
-                  Colors.black54,
-                ],
-              ),
-            ),
-          ),
-          // untuk menambahkan title judul filmnya
-          Positioned(
-            bottom: 16,
-            left: 16,
-            right: 16,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ImageWidget(
-                  imageSrc: '${movie.posterPath}',
-                  height: 160,
-                  width: 100,
-                  radius: 10,
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                Text(
-                  movie.title,
-                  style: const TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.star_rounded,
-                      color: Colors.amber,
-                    ),
-                    Text(
-                      '${movie.voteAverage} (${movie.voteCount})',
-                      style: const TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      );
 }
