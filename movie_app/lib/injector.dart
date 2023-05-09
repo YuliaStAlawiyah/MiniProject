@@ -5,6 +5,7 @@ import 'package:movie_app/models/api/movie_api_impl.dart';
 import 'package:movie_app/providers/movie_detail_provider.dart';
 import 'package:movie_app/providers/movie_discover_provider.dart';
 import 'package:movie_app/providers/movie_top_rated_provider.dart';
+import 'package:movie_app/providers/movie_videos_provider.dart';
 
 import 'constants.dart';
 
@@ -21,6 +22,9 @@ void setup() {
   );
   sl.registerFactory<MovieDetailProvider>(
     () => MovieDetailProvider(sl()),
+  );
+  sl.registerFactory<MovieVideosProvider>(
+    () => MovieVideosProvider(sl()),
   );
 
   // Register Repository

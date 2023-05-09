@@ -42,6 +42,7 @@ dependencies:
   email_validator: ^2.1.17
   shared_preferences: ^2.1.0
   get_it: ^7.5.0
+  youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
   flutter_test:

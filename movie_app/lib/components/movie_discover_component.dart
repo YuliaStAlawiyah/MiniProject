@@ -33,11 +33,10 @@ class _MovieDiscaverComponentState extends State<MovieDiscaverComponent> {
               width: double.infinity,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Colors.transparent, Colors.black12]),
-                // color: Colors.black12,
-                // borderRadius: BorderRadius.circular(10),
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.transparent, Colors.black12],
+                ),
               ),
             );
           }

@@ -1,5 +1,4 @@
 class MovieDetailModel {
-  final bool adult;
   final String backdropPath;
   final int budget;
   final List<Genre> genres;
@@ -17,7 +16,6 @@ class MovieDetailModel {
   final int voteCount;
 
   MovieDetailModel({
-    required this.adult,
     this.backdropPath = '',
     required this.budget,
     required this.genres,
@@ -37,7 +35,6 @@ class MovieDetailModel {
 
   factory MovieDetailModel.fromMap(Map<String, dynamic> json) =>
       MovieDetailModel(
-        adult: json["adult"],
         backdropPath: json["backdrop_path"],
         budget: json["budget"],
         genres: List<Genre>.from(json["genres"].map((x) => Genre.fromMap(x))),
