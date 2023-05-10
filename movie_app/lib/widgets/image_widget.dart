@@ -18,8 +18,8 @@ class ImageWidget extends StatelessWidget {
   final TypeScrImg type;
   final double? height;
   final double? width;
-  final void Function()? onTap;
   final double radius;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,9 @@ class ImageWidget extends StatelessWidget {
         Positioned.fill(
           child: Material(
             color: Colors.transparent,
-            child: InkWell(onTap: onTap),
+            child: InkWell(
+              onTap: onTap,
+            ),
           ),
         ),
       ],

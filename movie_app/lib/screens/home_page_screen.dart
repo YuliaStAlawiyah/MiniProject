@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/components/movie_discover_component.dart';
 import 'package:movie_app/components/movie_top_rated_component.dart';
 
+import 'movie_search_screen.dart';
+
 class BerandaPageScreen extends StatefulWidget {
   const BerandaPageScreen({super.key});
 
@@ -34,6 +36,15 @@ class _BerandaPageScreenState extends State<BerandaPageScreen> {
                 const Text('Movie App'),
               ],
             ),
+            actions: [
+              IconButton(
+                onPressed: () => showSearch(
+                  context: context,
+                  delegate: MovieSearchScreen(),
+                ),
+                icon: const Icon(Icons.search),
+              ),
+            ],
             floating: true,
             snap: true,
             centerTitle: true,

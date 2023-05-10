@@ -8,6 +8,7 @@ import 'package:movie_app/providers/movie_top_rated_provider.dart';
 import 'package:movie_app/providers/movie_videos_provider.dart';
 
 import 'constants.dart';
+import 'providers/movie_search_provider.dart';
 
 // sl(service locator)
 final sl = GetIt.instance;
@@ -25,6 +26,9 @@ void setup() {
   );
   sl.registerFactory<MovieVideosProvider>(
     () => MovieVideosProvider(sl()),
+  );
+  sl.registerFactory<MovieSearchProvider>(
+    () => MovieSearchProvider(sl()),
   );
 
   // Register Repository
