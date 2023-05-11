@@ -39,14 +39,15 @@ dependencies:
   provider: ^6.0.5
   dartz: ^0.10.1
   carousel_slider: ^4.2.1
-  email_validator: ^2.1.17
   shared_preferences: ^2.1.0
   get_it: ^7.5.0
   youtube_player_flutter: ^8.1.2
+  http: ^0.13.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  test: ^1.22.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

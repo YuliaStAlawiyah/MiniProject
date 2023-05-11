@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/movie_page_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:email_validator/email_validator.dart';
 
 class LoginPageScreen extends StatefulWidget {
   const LoginPageScreen({super.key});
@@ -93,24 +92,6 @@ class _LoginScreenState extends State<LoginPageScreen> {
                   }
                 },
               ),
-              // const SizedBox(
-              //   height: 20,
-              // ),
-              // TextFormField(
-              //   controller: _emailController,
-              //   decoration: const InputDecoration(
-              //     prefixIcon: Icon(Icons.email_rounded),
-              //     labelText: 'Email',
-              //     border: OutlineInputBorder(),
-              //   ),
-              //   validator: (email) {
-              //     if (email != null && !EmailValidator.validate(email)) {
-              //       return 'Enter a valid email';
-              //     } else {
-              //       return null;
-              //     }
-              //   },
-              // ),
               const SizedBox(
                 height: 20,
               ),

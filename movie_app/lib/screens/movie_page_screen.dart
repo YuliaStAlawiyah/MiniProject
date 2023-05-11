@@ -19,7 +19,7 @@ class _MoviePageScreenState extends State<MoviePageScreen> {
   }
 
   static const List<Widget> _widgetOptions = <Widget>[
-    BerandaPageScreen(),
+    HomePageScreen(),
     AkunPageScreen()
   ];
 

@@ -4,14 +4,14 @@ import 'package:movie_app/components/movie_top_rated_component.dart';
 
 import 'movie_search_screen.dart';
 
-class BerandaPageScreen extends StatefulWidget {
-  const BerandaPageScreen({super.key});
+class HomePageScreen extends StatefulWidget {
+  const HomePageScreen({super.key});
 
   @override
-  State<BerandaPageScreen> createState() => _BerandaPageScreenState();
+  State<HomePageScreen> createState() => _HomePageScreenState();
 }
 
-class _BerandaPageScreenState extends State<BerandaPageScreen> {
+class _HomePageScreenState extends State<HomePageScreen> {
   @override
   void initState() {
     super.initState();
