@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:movie_app/models/api/movie_api.dart';
-import 'package:movie_app/models/api/movie_api_impl.dart';
+import 'package:movie_app/model/api/movie_api.dart';
+import 'package:movie_app/model/api/movie_api_impl.dart';
 import 'package:movie_app/providers/movie_detail_provider.dart';
 import 'package:movie_app/providers/movie_discover_provider.dart';
 import 'package:movie_app/providers/movie_top_rated_provider.dart';

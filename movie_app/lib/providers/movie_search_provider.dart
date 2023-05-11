@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/models/api/movie_api.dart';
-import 'package:movie_app/models/movie_model.dart';
+import 'package:movie_app/model/api/movie_api.dart';
+import 'package:movie_app/model/movie_model.dart';
 
 class MovieSearchProvider with ChangeNotifier {
   final MovieRepository _movieRepository;

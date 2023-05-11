@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:movie_app/models/movie_detail_model.dart';
-import 'package:movie_app/models/movie_model.dart';
-import 'package:movie_app/models/api/movie_api.dart';
-import 'package:movie_app/models/movie_videos_model.dart';
+import 'package:movie_app/model/movie_detail_model.dart';
+import 'package:movie_app/model/movie_model.dart';
+import 'package:movie_app/model/api/movie_api.dart';
+import 'package:movie_app/model/movie_videos_model.dart';
 
 class MovieImplRepository implements MovieRepository {
   final Dio _dio;
