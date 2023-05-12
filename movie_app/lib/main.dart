@@ -3,11 +3,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:movie_app/injector.dart';
-import 'package:movie_app/providers/movie_discover_provider.dart';
-import 'package:movie_app/providers/movie_top_rated_provider.dart';
-import 'package:movie_app/screens/login_page_screen.dart';
+import 'package:movie_app/view_model/providers/movie_discover_provider.dart';
+import 'package:movie_app/view_model/providers/movie_top_rated_provider.dart';
+import 'package:movie_app/views/screens/login_page_screen.dart';
 import 'package:provider/provider.dart';
-import 'providers/movie_search_provider.dart';
+import 'view_model/providers/movie_search_provider.dart';
 
 void main() {
   // untuk menjalankan fungsi splash screen

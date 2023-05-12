@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/screens/login_page_screen.dart';
+import 'package:movie_app/views/screens/login_page_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AkunPageScreen extends StatefulWidget {

@@ -2,13 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:movie_app/model/api/movie_api.dart';
 import 'package:movie_app/model/api/movie_api_impl.dart';
-import 'package:movie_app/providers/movie_detail_provider.dart';
-import 'package:movie_app/providers/movie_discover_provider.dart';
-import 'package:movie_app/providers/movie_top_rated_provider.dart';
-import 'package:movie_app/providers/movie_videos_provider.dart';
+import 'package:movie_app/view_model/providers/movie_detail_provider.dart';
+import 'package:movie_app/view_model/providers/movie_discover_provider.dart';
+import 'package:movie_app/view_model/providers/movie_top_rated_provider.dart';
+import 'package:movie_app/view_model/providers/movie_videos_provider.dart';
 
 import 'constants.dart';
-import 'providers/movie_search_provider.dart';
+import 'view_model/providers/movie_search_provider.dart';
 
 // sl(service locator)
 final sl = GetIt.instance;

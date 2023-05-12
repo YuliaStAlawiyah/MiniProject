@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/model/movie_detail_model.dart';
 import 'package:movie_app/model/movie_model.dart';
-import 'package:movie_app/widgets/image_widget.dart';
+import 'package:movie_app/views/widgets/image_widget.dart';
 
 class ItemMovie extends Container {
   final MovieModel? movie;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/providers/movie_top_rated_provider.dart';
-import 'package:movie_app/screens/movie_detail_page_screen.dart';
-import 'package:movie_app/widgets/image_widget.dart';
+import 'package:movie_app/view_model/providers/movie_top_rated_provider.dart';
+import 'package:movie_app/views/screens/movie_detail_page_screen.dart';
+import 'package:movie_app/views/widgets/image_widget.dart';
 import 'package:provider/provider.dart';
 
 class MovieTopRatedComponent extends StatefulWidget {

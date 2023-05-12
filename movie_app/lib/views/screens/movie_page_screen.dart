@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/screens/akun_page_screen.dart';
+import 'package:movie_app/views/screens/akun_page_screen.dart';
 import 'home_page_screen.dart';
 
 class MoviePageScreen extends StatefulWidget {

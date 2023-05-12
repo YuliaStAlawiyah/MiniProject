@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/screens/movie_page_screen.dart';
+import 'package:movie_app/views/screens/movie_page_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPageScreen extends StatefulWidget {

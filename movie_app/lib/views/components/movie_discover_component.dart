@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/providers/movie_discover_provider.dart';
-import 'package:movie_app/screens/movie_detail_page_screen.dart';
-import 'package:movie_app/widgets/item_movie_widget.dart';
+import 'package:movie_app/view_model/providers/movie_discover_provider.dart';
+import 'package:movie_app/views/screens/movie_detail_page_screen.dart';
+import 'package:movie_app/views/widgets/item_movie_widget.dart';
 import 'package:provider/provider.dart';
 
 class MovieDiscaverComponent extends StatefulWidget {

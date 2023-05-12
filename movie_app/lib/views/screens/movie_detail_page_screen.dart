@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/providers/movie_detail_provider.dart';
-import 'package:movie_app/providers/movie_videos_provider.dart';
-import 'package:movie_app/widgets/image_widget.dart';
-import 'package:movie_app/widgets/item_movie_widget.dart';
-import 'package:movie_app/widgets/youtube_player_widget.dart';
+import 'package:movie_app/view_model/providers/movie_detail_provider.dart';
+import 'package:movie_app/view_model/providers/movie_videos_provider.dart';
+import 'package:movie_app/views/widgets/image_widget.dart';
+import 'package:movie_app/views/widgets/item_movie_widget.dart';
+import 'package:movie_app/views/widgets/youtube_player_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '../injector.dart';
+import '../../injector.dart';
 
 class MovieDetailPageScreen extends StatelessWidget {
   const MovieDetailPageScreen({super.key, required this.id});
